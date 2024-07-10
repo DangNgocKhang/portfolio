@@ -1,0 +1,83 @@
+@import "colors";
+
+.header {
+  position: fixed;
+  margin-top: 1rem;
+  height: 3.5rem;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.5s, padding 1s;
+  color: $primary_white_th1;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5rem;
+
+  .header_home,
+  .header_info {
+    height: 100%;
+    width: max-content;
+    font-weight: 300;
+    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+  }
+  .header_home {
+    font-family: "Just Another Hand", cursive;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 2.5rem;
+    &:hover {
+      color: $primary_purple;
+      cursor: pointer;
+      span {
+        animation: shakeRotate 0.5s;
+        margin-top: 0.25rem;
+      }
+    }
+    span {
+      color: $primary_purple;
+      font-size: 2.5rem;
+    }
+  }
+  .header_info {
+    gap: 2rem;
+    li {
+      position: relative;
+
+      &:hover {
+        color: $primary_purple;
+      }
+    }
+  }
+}
+.visible {
+  color: $primary_purple;
+}
+.header_scroll {
+  position: fixed;
+  width: 57rem;
+  background-color: $dark_th2_opacity;
+  border-radius: 3rem;
+  padding: 0 2rem;
+  z-index: 50;
+}
+@keyframes shakeRotate {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: rotate(-10deg);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: rotate(10deg);
+  }
+}

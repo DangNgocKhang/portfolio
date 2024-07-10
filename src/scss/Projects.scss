@@ -1,0 +1,244 @@
+@import "colors";
+
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-500px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fly-to-space {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translateY(-50rem);
+    display: none;
+  }
+}
+@keyframes smoke-fade {
+  50% {
+    opacity: 0;
+    transform: translateY(-5.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@mixin button-img($height: 5rem, $width: 20rem) {
+  background-image: url("../../public/layout-button.png");
+  height: $height;
+  width: $width;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+  &:hover span {
+    font-size: 2rem;
+  }
+  span {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-6%, -50%);
+    font-size: 1.85rem;
+    font-family: "Righteous", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    white-space: nowrap;
+    color: $primary_white_th1;
+    text-shadow: -1.5px -1.5px 0 #ec3195, 1.5px -1.5px 0 #ec3195,
+      -1.5px 1.5px 0 #ec3195, 1.5px 1.5px 0 #ec3195;
+  }
+}
+.projects {
+  position: relative;
+  height: max-content;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  .button-projects {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    @include button-img;
+  }
+  .space {
+    position: absolute;
+    height: max-content;
+    width: 15rem;
+    bottom: 0;
+    left: 45%;
+    z-index: 25;
+    img {
+      position: absolute;
+
+      bottom: 0;
+      height: auto;
+      width: 8rem;
+
+      &#rocket {
+        z-index: 10;
+        transition: transform 0.5s linear;
+
+        // Define the combined animation for the rocket
+        @keyframes rocket-up {
+          0% {
+            transform: translateY(0);
+          }
+
+          100% {
+            transform: translateY(-4rem);
+          }
+        }
+      }
+
+      &#smoke {
+        z-index: 5;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        left: 0.25rem;
+        // Define the fade down animation for the smoke
+      }
+    }
+    &.fly {
+      animation: fly-to-space 1s ease-out forwards;
+    }
+    &.ready {
+      img#rocket {
+        animation: rocket-up 1s forwards;
+      }
+
+      img#smoke {
+        animation: smoke-fade 1s forwards;
+      }
+    }
+  }
+
+  .container {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: $dark_th2;
+    background-image: url("../../public/svg/skyLayout.svg");
+    background-size: auto;
+    background-repeat: repeat;
+    background-position: top left;
+    box-shadow: inset 0px 0px 10px 10px $primary_dark_th1;
+
+    .button-exit {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 4rem;
+      width: max-content;
+      min-width: 4rem;
+      &:hover {
+        cursor: pointer;
+      }
+      &:hover span {
+        font-size: 3rem;
+      }
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        font-family: "Righteous", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        white-space: nowrap;
+        color: $primary_white_th1;
+        text-shadow: -1.5px -1.5px 0 #ec3195, 1.5px -1.5px 0 #ec3195,
+          -1.5px 1.5px 0 #ec3195, 1.5px 1.5px 0 #ec3195;
+      }
+    }
+    .list-projects {
+      position: absolute;
+      inset: 4.75rem 4rem 4rem 4rem;
+      overflow-y: auto;
+      display: flex;
+      border-radius: 3rem;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+              
+
+      .child {
+        flex: 1;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+      .child-img {
+        aspect-ratio: 1/1;
+        flex-shrink: 0;
+      }
+      .item {
+        height: 100%;
+      }
+      .item-img {
+        height: 100%;
+        width: 100%;
+      }
+      .item-info {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        overflow: hidden;
+        div {
+          padding: 4rem 0 4rem 4rem;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          h1 {
+            font-weight: 600;
+          }
+          h3 {
+            font-weight: 600;
+            font-size: 2rem;
+          }
+          p {
+            word-spacing: 2px;
+            line-height: 2rem;
+            font-size: 1.5rem;
+            opacity: 90%;
+          }
+          a {
+            display: flex;
+            align-items: center;
+            font-size: 1.25rem;
+            text-decoration: underline;
+            gap: 0.25rem;
+            opacity: 90%;
+            font-style: italic;
+            &:hover {
+              opacity: 80%;
+              cursor: pointer;
+            }
+          }
+          h6 {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  .unhidden {
+    animation: fade-down 1s ease-out;
+    display: block;
+  }
+}

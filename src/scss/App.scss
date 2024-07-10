@@ -1,0 +1,10 @@
+@import "colors";
+
+.main {
+  height: max-content;
+  width: 100%;
+  background-color: $primary_dark_th1;
+  overflow: auto;
+  padding: 0 5rem;
+  
+}
