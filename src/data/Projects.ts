@@ -1,6 +1,6 @@
-import { Project } from "../types/Project";
+import { IProject, IProjectThumbnail } from "../types/Project";
 
-export const dataProjects: Project[] = [
+export const dataProjects: IProject[] = [
   {
     id: 1,
     title: "DAC",
@@ -54,10 +54,25 @@ export const dataProjects: Project[] = [
   },
 ];
 
-export const dataThumbnail: string[] = [
-  "Nckh",
-  "NhaMinh1",
-  "Hotel",
-  "FancyForm",
-  "Stech",
+export const dataThumbnail: IProjectThumbnail[] = [
+  {
+    id: 5,
+    src: "Nckh",
+  },
+  {
+    id: 4,
+    src: "NhaMinh1",
+  },
+  {
+    id: 3,
+    src: "Hotel",
+  },
+  {
+    id: 2,
+    src: "FancyForm",
+  },
+  {
+    id: 1,
+    src: "Stech",
+  },
 ];

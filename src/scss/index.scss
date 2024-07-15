@@ -5,7 +5,7 @@
 // Font button
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 html {
-  font-size: 16px;
+  font-size: 18px;
   scroll-behavior: smooth;
 
 }
@@ -14,5 +14,15 @@ body {
   font-family: "Arimo", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  font-size: 16px;
 }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  html {
+    font-size: 16px;  
+  }
+}
+@media only screen  and (max-device-width: 768px) {
+  html {
+    font-size: 16px;  
+  }
+}
+

@@ -1,11 +1,10 @@
 @import "colors";
-
 .introduce {
-  display: block;
   height: calc(100vh - 4.5rem);
   width: 100%;
+  display: block;
   color: $primary_white_th1;
-  padding-top: 7.5rem;
+  margin-top: 7.5rem;
   font-size: 3rem;
   font-weight: 400;
   line-height: 5rem;
@@ -19,5 +18,12 @@
 @keyframes blink {
   50% {
     opacity: 0;
+  }
+}
+/*===========Tab and  IPad Device=============*/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .introduce {
+    height: 20rem;
+
   }
 }

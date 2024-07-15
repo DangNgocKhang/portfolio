@@ -49,11 +49,12 @@
         color: $primary_purple;
       }
     }
+    .visible {
+      color: $primary_purple;
+    }
   }
 }
-.visible {
-  color: $primary_purple;
-}
+
 .header_scroll {
   position: fixed;
   width: 57rem;

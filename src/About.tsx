@@ -6,7 +6,7 @@ import { FaLocationDot, FaPhone } from "react-icons/fa6";
 const About = () => {
   return (
     <div className="about">
-      <img loading="lazy" src="./khang1.jpg" alt="avatar" className="about_img"/>
+      <img loading="lazy" src="./ava.png" alt="avatar" className="about_img"/>
       <div className="about_info">
         <h1>About Me</h1>
         <p>

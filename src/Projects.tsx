@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./scss/Projects.scss";
 import { dataProjects, dataThumbnail } from "./data/Projects";
-import { Project } from "./types/Project";
+import { IProject, IProjectThumbnail } from "./types/Project";
 import { FaLink } from "react-icons/fa6";
 import { FaAngleDoubleDown } from "react-icons/fa";
 
@@ -80,7 +80,7 @@ const Projects = () => {
       <div className={`container ${!isOpenProjects ? "unhidden" : ""}`}>
         <div className="list-projects">
           <div className="child" ref={leftDivRef}>
-            {dataProjects.map((project: Project, index: number) => {
+            {dataProjects.map((project: IProject, index: number) => {
               return (
                 <div
                   key={project.id}
@@ -118,12 +118,12 @@ const Projects = () => {
             })}
           </div>
           <div className="child child-img" ref={rightDivRef}>
-            {dataThumbnail.map((src: string, index: number) => {
+            {dataThumbnail.map((thumbnail:IProjectThumbnail, index: number) => {
               return (
                 <img
                   loading="lazy"
-                  src={`./thumbnail/${src}.jpg`}
-                  alt={src}
+                  src={`./thumbnail/${thumbnail.src}.jpg`}
+                  alt={thumbnail.src}
                   key={index}
                   className="item item-img"
                 />

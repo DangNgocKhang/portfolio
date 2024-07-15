@@ -1,9 +1,9 @@
 @import "colors";
 
 .about {
-  position: relative;
   height: max-content;
-  min-height: 100vh;
+  min-height: max-content;
+  padding-top: 7.5rem;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -15,7 +15,6 @@
     flex-shrink: 0;
     height: 18rem;
     width: 18rem;
-    background-color: $primary_purple;
     margin-right: 2rem;
   }
   .about_info {

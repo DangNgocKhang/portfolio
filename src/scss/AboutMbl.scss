@@ -1,0 +1,76 @@
+@import "colors";
+
+.about_mbl {
+  display: block;
+  height: max-content;
+  min-height: max-content;
+  width: 100%;
+  padding-top: 4.5rem;
+  color: $dark_th3;
+  line-height: 2rem;
+
+  .about_info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    text-align: justify;
+    img {
+      height: auto;
+      width: 4rem;
+    }
+    #about_sumary {
+      line-height: 3rem;
+      img {
+        &#stickManOffice1,
+        &#stickManOffice2 {
+          width: 3.5rem;
+
+          object-fit: contain; /* Ensure the image fits within the specified height */
+        }
+        &#stickManOffice1 {
+          float: left;
+          margin-right: 1rem;
+        }
+        &#stickManOffice2 {
+          float: right;
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $primary_purple;
+    }
+
+    .about_contact_detail {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      div {
+        display: flex;
+        gap: 1rem;
+        white-space: nowrap;
+      }
+      li {
+        
+        img {
+          &#stickManPhone {
+            height: auto;
+            width: 3rem;
+          }
+          &#stickManMail {
+            height: auto;
+            width: 3rem;
+          }
+        }
+        span {
+          padding-left: 1rem;
+          color: $dark_th3;
+        }
+      }
+    }
+  }
+}

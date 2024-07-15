@@ -1,0 +1,44 @@
+@import "colors";
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.list_icon_mbl {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  animation: fadeDown 0.5s ease-in-out;
+  animation-fill-mode: backwards;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    img {
+      height: 3.5rem;
+      width: auto;
+    }
+    h4 {
+      color: $dark_th3;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}

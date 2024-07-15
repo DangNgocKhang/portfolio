@@ -37,7 +37,7 @@ const Resume = () => {
           </p>
           <span>Excellent Science Research of SGU</span>
           <p>
-            opic chosen for exibition and participated for Student Conference of
+            Topic chosen for exibition and participated for Student Conference of
             Science Research. • 2022-2023
           </p>
         </div>
@@ -57,6 +57,7 @@ const Resume = () => {
               alt="univer1"
               onMouseEnter={() => handleOpenListSkill("TECH")}
               onMouseLeave={() => handleOpenListSkill("")}
+              
             />
           </div>
           <div>
@@ -81,6 +82,9 @@ const Resume = () => {
           </div>
         </div>
         <div className="contain-list-skills">
+        {typeSkillsOpen === "" && (
+            <div className="tutorial">Hover on the planet for more details</div>
+          )}
           <ListSkills typeSkill={"TECH"} onFocus={typeSkillsOpen === "TECH"} />
           <ListSkills
             typeSkill={"DESIGN"}

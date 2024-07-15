@@ -1,0 +1,29 @@
+@import "colors";
+.introduce_mbl {
+  height: calc(100vh - 3.5rem);
+  width: 100%;
+  display: block;
+  color: $primary_white_th1;
+  padding-top: 4.5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 3rem;
+
+  
+  span {
+    color: $primary_purple;
+  }
+  .cursor {
+    animation: blink 1s step-start infinite;
+  }
+  .about_img_mbl {
+    max-width: 50dvw;
+    height: auto;
+    display: block;
+  }
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

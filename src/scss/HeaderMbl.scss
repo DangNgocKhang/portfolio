@@ -1,0 +1,109 @@
+@import "colors";
+
+.header_mbl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3.5rem;
+  width: 100dvw;
+  background-color: $dark_th2_opacity;
+  background-image: url("../../public/svg/skyLayout.svg");
+  background-size: cover;
+  background-repeat: repeat;
+  color: $primary_white_th1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  font-size: 2rem;
+  z-index: 50;
+  .home_target {
+    color: $primary_purple;
+  }
+  .home_mbl {
+    font-family: "Just Another Hand", cursive;
+    font-weight: 300;
+    font-style: normal;
+    display: flex;
+    align-items: center;
+  }
+  .header_info_mbl {
+    @keyframes moveRightToLeft {
+      0% {
+        transform: translateX(100%); /* Start from the right */
+      }
+      100% {
+        transform: translateX(0); /* End at the original position */
+      }
+    }
+
+    position: fixed;
+    height: calc(100dvh - 3.5rem);
+    width: 80dvw;
+    right: 0;
+    top: 3.5rem;
+    background-color: $dark_th2;
+    background-image: url("../../public/svg/skyLayout.svg");
+    background-size: auto;
+    background-repeat: repeat;
+    animation: moveRightToLeft 0.3s linear;
+    box-shadow: 0px 10px 10px $dark_th2_opacity;
+    display: flex;
+    padding-left: 1rem;
+    .check_point {
+      flex-grow: 1;
+      position: relative;
+      div {
+        background-image: url("../../public/svg/checkPoint.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 5rem;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        transform: translate(-20%, 20%);
+      }
+      a {
+        position: absolute;
+        display: block;
+        font-size: 1.5rem;
+        margin-top: 0.5rem;
+        width: 100%;
+        padding: 0.5rem 1rem;
+        span {
+          position: absolute;
+          right: 0;
+          top: 0;
+          transform: translate(-45%, 5%);
+          font-size: 1.85rem;
+          font-family: "Righteous", sans-serif;
+          font-weight: 400;
+          font-style: normal;
+          white-space: nowrap;
+          color: $primary_white_th1;
+          text-shadow: -1.5px -1.5px 0 #20abcb, 1.5px -1.5px 0 #20abcb,
+            -1.5px 1.5px 0 #20abcb, 1.5px 1.5px 0 #20abcb;
+          z-index: 10;
+        }
+      }
+
+      .visible span {
+        font-size: 2.5rem;
+        transform: translate(-30%, -20%);
+        text-shadow: -1.5px -1.5px 0 #F71D0D, 1.5px -1.5px 0 #F71D0D,
+            -1.5px 1.5px 0 #F71D0D, 1.5px 1.5px 0 #F71D0D;
+      }
+    }
+    .space_univer {
+      width: 5rem;
+      flex-shrink: 0;
+      position: relative;
+      img {
+        width: 80%;
+        position: absolute;
+        z-index: 10;
+      }
+    }
+  }
+}
